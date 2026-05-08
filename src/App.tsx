@@ -303,15 +303,6 @@ export default function App() {
 
         <section className="closing reveal">
           <div className="heart">❀</div>
-          <figure className="raul-quote">
-            <blockquote>
-              "sonho que se sonha junto"
-            </blockquote>
-            <figcaption>
-              Raul Seixas lembrou: quando a gente sonha junto, o sonho encontra
-              caminho para virar realidade.
-            </figcaption>
-          </figure>
           <p className="final">a um pensamento de distância.</p>
           <p className="always">always, stets</p>
           <div className="signature-final">Danthe Belo</div>
