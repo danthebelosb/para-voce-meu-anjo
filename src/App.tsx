@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isStickerOpen, setIsStickerOpen] = useState(false);
 
   const circles = useMemo(() => {
     return Array.from({ length: 14 }).map((_, i) => {
@@ -297,6 +298,42 @@ export default function App() {
               </p>
               <div className="date">até 30 de maio</div>
               <div className="rsvp">resposta esperada · com saudade</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="sticker-surprise reveal">
+          <div className="eyebrow">uma figurinha</div>
+          <h2>
+            Envelope <span className="em">especial</span>
+          </h2>
+          <div className="divider"></div>
+
+          <div className={`sticker-pack ${isStickerOpen ? 'open' : ''}`}>
+            <button
+              className="envelope"
+              type="button"
+              aria-expanded={isStickerOpen}
+              onClick={() => setIsStickerOpen(true)}
+            >
+              <span className="envelope-flap"></span>
+              <span className="envelope-front">
+                <span className="pack-label">Abrir envelope</span>
+                <span className="pack-subtitle">figurinha rara</span>
+              </span>
+            </button>
+
+            <div className="sticker-reveal" aria-hidden={!isStickerOpen}>
+              <div className="sticker-card">
+                <img
+                  src="/laura-figurinha.png"
+                  alt="Figurinha da Laura"
+                  loading="lazy"
+                />
+              </div>
+              <p>
+                No álbum da minha vida você sempre será a figura mais rara
+              </p>
             </div>
           </div>
         </section>
